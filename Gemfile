@@ -26,7 +26,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-#
 gem 'foundation-rails'
 
 gem 'redcarpet'
@@ -44,6 +43,10 @@ gem 'bcrypt'
 gem 'better_errors'
 
 gem 'binding_of_caller'
+
+gem 'kramdown'
+
+gem 'log4r'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

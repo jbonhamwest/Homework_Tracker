@@ -1,16 +1,32 @@
-body{
-	background-color: #C4C1BD;
+* {
+	color: #824232;
 }
+
+body{
+	background-color: #eaebd8;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-family: 'Muli', sans-serif;
+}
+
+.Signup {
+	line-height: 1.25
+}
+
+.Signup li {
+    padding-bottom: 10px;
+}
+
 .Sign_Form {
 	text-align: center;
 	margin:auto;
 	margin-top:10px;
 	width:500px;
-	background-color: rgba(0, 0, 0, .2); 
+	background-color: rgb(113, 189, 191);
 	padding-bottom:20px;
 	padding-top:2px;
 	border-radius: 18px;
-	box-shadow: 5px 5px 5px #888888;
+	box-shadow: 5px 5px 5px #4e3737;
 
 }
 
@@ -22,28 +38,27 @@ body{
 }
 
 .Main_Header {
-	background-image: url('header_bg.png');
+	background-color: rgb(113, 189, 191);
+	padding: 0 20px;
 	height:60px;
-	padding:0 20px;
 	border-radius: 18px;
-	box-shadow: 5px 5px 5px #888888;
+	box-shadow: 5px 5px 5px #824232;
 
 }
 
 .Main_Header h1 {
 	float:left;
 	margin-top:8px;
-	color:#680000;
-	background-image: url('ruby-source-logo.png');
+	color: #824232;
 	height:43px;
-	width:215px;
+	/*width:215px;*/
 	/*text-indent:-9999px;*/
 }
 
 .nav {
 	list-style-type: none;
 	float: right;
-	color:#C4C1BD;
+	color:#824232;
 
 }
 .nav li {
@@ -52,7 +67,7 @@ body{
 
 }
 .nav_links {
-	color: #680000 ;
+	color: #824232;
 	text-decoration: none;
 }
 

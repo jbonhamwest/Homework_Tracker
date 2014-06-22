@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+  before_action :set_assignment, only: [:show, :edit, :update, :delete]
 
   # GET /assignments
   # GET /assignments.json
@@ -53,8 +53,8 @@ class AssignmentsController < ApplicationController
 
   # DELETE /assignments/1
   # DELETE /assignments/1.json
-  def destroy
-    @assignment.destroy
+  def delete
+    @assignment.delete
     respond_to do |format|
       format.html { redirect_to assignments_url, notice: 'Assignment was successfully deleted.' }
       format.json { head :no_content }

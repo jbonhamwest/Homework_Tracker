@@ -39,9 +39,9 @@ class AssignmentsControllerTest < ActionController::TestCase
     assert_redirected_to assignment_path(assigns(:assignment))
   end
 
-  test "should destroy assignment" do
+  test "should deslete assignment" do
     assert_difference('Assignment.count', -1) do
-      delete :destroy, id: @assignment
+      delete :delete, id: @assignment
     end
 
     assert_redirected_to assignments_path

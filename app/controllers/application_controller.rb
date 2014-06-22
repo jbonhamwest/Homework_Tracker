@@ -5,8 +5,13 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     if session[:user_id]
-      @current_user = User.find session[:user_id]
-      return true
+      @current_user = User.find_by_id session[:user_id]
+      if @current_user
+        return true
+      else
+        redirect_to controller: 'sessions', action: 'logout'
+        return false
+      end
     else
       redirect_to controller: 'sessions', action: 'login'
       return false

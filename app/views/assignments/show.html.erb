@@ -1,24 +1,4 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @assignment.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @assignment.description %>
-</p>
-
-<p>
-  <strong>Assigned:</strong>
-  <%= @assignment.assigned %>
-</p>
-
-<p>
-  <strong>Assigned due:</strong>
-  <%= @assignment.assigned_due %>
-</p>
-
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Back', assignments_path %>

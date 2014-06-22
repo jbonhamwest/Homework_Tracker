@@ -1,8 +1,24 @@
-    <h1>Users#new</h1>
-      <p>Find me in app/views/users/new.html.erb</p>
-    <% @page_title = "UserAuth | Signup" %>
+<% @page_title = "UserAuth | Signup" %>
+<div class="Signup">
+  <h1>Let's get started!</h1>
+      <ol>
+        <li>To begin using the Homework Tracker system, please fill in the information
+          requested in each box below.</li>
+        <li>Once you've filled in the first field (where it asks for your Email
+          address), push the 'return' key to move to the next field.</li>
+        <li>Complete each field, remembering to push the 'return' key at the end
+          of each field.</li>
+        <li>Once you've filled in all three fields, click on the "Signup" button.</li>
+        <li>Be sure to remember your password so you don't have to make a new account.</li>
+      </ol>
+      <p>That's all there is to it! Now you've created your own Homework Tracker
+        account and can check for new assignments, see what your instructor thought
+        about assignments that have been graded, and make sure you don't have any
+        assignments that are past due.</p>
+</div>
+
 <div class="Sign_Form">
-    <h1>Sign Up</h1>
+    <h1>Create Account</h1>
     <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
       <!-- <p> Username:</br> <%= f.text_field :username%> </p> -->
       <p> Email:</br> <%= f.text_field :email%> </p>

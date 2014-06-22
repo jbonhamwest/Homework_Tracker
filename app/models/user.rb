@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-
   before_save :encrypt_password
   after_save :clear_password
 
   EMAIL_REGEX = /@/
-  validates :email, presence: true, uniqueness: true, format: { with: EMAIL_REGEX }
+  validates :email, presence: true, uniqueness: true,
+                    format: { with: EMAIL_REGEX }
   validates :password, confirmation: true
   # Only on Create so other actions like update password attribute can be nil
   validates_length_of :password, in: 6..20, on: :create
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def match_password(login_password = "")
-    self.encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
+    encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
   end
 
   def encrypt_password

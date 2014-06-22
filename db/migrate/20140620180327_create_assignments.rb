@@ -5,7 +5,6 @@ class CreateAssignments < ActiveRecord::Migration
       t.text :description
       t.datetime :assigned
       t.datetime :assigned_due
-
       t.timestamps
     end
   end

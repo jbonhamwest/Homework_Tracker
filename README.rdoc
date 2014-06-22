@@ -1,7 +1,5 @@
 == README
 
-Things you may want to cover:
-
 Ruby version
 This Homework Tracker application is built using Ruby on Rails version 4.1.
 * System dependencies

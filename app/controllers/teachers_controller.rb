@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: [:show, :edit, :update, :destroy]
+  before_action :set_teacher, only: [:show, :edit, :update, :delete]
 
   # GET /teachers
   # GET /teachers.json
@@ -53,8 +53,8 @@ class TeachersController < ApplicationController
 
   # DELETE /teachers/1
   # DELETE /teachers/1.json
-  def destroy
-    @teacher.destroy
+  def delete
+    @teacher.delete
     respond_to do |format|
       format.html { redirect_to teachers_url, notice: 'Teacher record was successfully deleted.' }
       format.json { head :no_content }

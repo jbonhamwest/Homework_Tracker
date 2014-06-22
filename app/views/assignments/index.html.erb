@@ -1,31 +1,30 @@
-<h1>Listing assignments</h1>
+<h1>Assignments</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Date Assigned</th>
+      <th>Date Due</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Assigned</th>
-      <th>Assigned due</th>
-      <th colspan="3"></th>
+      <th>Status</th>
+      <th>Completed Work URL</th>
+      <th>Assignment Comments</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @assignments.each do |assignment| %>
-      <tr>
-        <td><%= assignment.title %></td>
-        <td><%= assignment.description %></td>
-        <td><%= assignment.assigned %></td>
-        <td><%= assignment.assigned_due %></td>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <td>06/15/2014</td>
+      <td>06/16/2014</td>
+      <td>Fuck You</td>
+      <td>Who Cares</td>
+      <td>Stupid</td>
+      <td>www.why.com</td>
+      <td>Piece of Shit</td>
+      <td>Button 1</td>
+      <td>Button 2</td>
+    </tr>    
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Assignment', new_assignment_path %>
