@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
 		  session[:user_id] = authorized_user.id
 			session[:email] = authorized_user.email
 			puts "Authorized user id: #{session[:user_id]}"
+			# output example from shell: Authorized user id: 5
 		  student = Student.find_by_user_id session[:user_id]
 			if student
 				puts "Student Authorized: #{student.id}"
@@ -37,10 +38,15 @@ class SessionsController < ApplicationController
 				if teacher
 					puts "Teacher Authorized: #{teacher.id}"
 					session[:teacher_id] = teacher.id
+					# example of out from shell: Teacher Authorized: 1
 				end
 			end
 
 			puts "Student id: #{session[:student_id]}; Teacher_id: #{session[:teacher_id]}"
+			# prints this info out in the command line of rails server so you can
+			# track what's going on as the method runs. Would rather use log4r gem but
+			# is a little complicated to set up
+			# output exmample from shell: Student id: ; Teacher_id: 1
 
 			flash[:notice] = "Welcome back to Homework Tracker! You've logged in as #{session[:email]}"
 			redirect_to(action: 'home')

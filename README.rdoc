@@ -1,22 +1,46 @@
 == README
 
 Ruby version
-This Homework Tracker application is built using Ruby on Rails version 4.1.
+This Homework Tracker application is built using Ruby on Rails version 4.1.1
+
 * System dependencies
+See Gemfile for specific gem dependencies.
 
 * Configuration
+The database engine is SQLite.
+admin@localhost is the initial user.
 
 * Database creation
+The database is being seeded with test data. Test data will be removed upon
+app completion.
 
 * Database initialization
 
 * How to run the test suite
+Currently there is no test suite
 
 * Services (job queues, cache servers, search engines, etc.)
+None
 
 * Deployment instructions
+TBD
 
-* ...
+* To Do
+ **Alternating listing row style generation
+ **List sorting based on date due
+ **Past due assignment list highlighting
+ **Homework submission workflow and button creation on student assignments view
+ **Comment field buttons on student assignment view
+ **Comment field creation for teacher
+ **Assignment creation workflow and button creation on teacher assignments view
+ **Additional styling
+ **Administrator workflows/views for assigning roles to users, default user
+   should be student
+ **Assignment description field rendered using Markdown to HTML
+ **Assignment comment fields rendered using Markdown to HTML
+ **Homework submission field rendered using Markdown to HTML if not URL
+
+
 
 
 Please feel free to use a different markup language if you do not plan to run
