@@ -1,3 +1,31 @@
 // Place all the styles related to the assignments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.Assignments {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.Assignments table {
+    border-collapse: collapse;
+}
+
+.Assignments td, .Assignments th {
+    font-size: 1em;
+    border: 1px solid #824232;
+    padding: 3px 7px 2px 7px;
+}
+
+.Assignments th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: rgb(113, 189, 191);
+    color: rgb(142, 197, 195);
+}
+
+.Assignments tr.alt td {
+    color: #000000;
+    background-color: rgb(180, 228, 221);
+}

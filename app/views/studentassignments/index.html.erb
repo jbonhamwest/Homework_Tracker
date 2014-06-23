@@ -1,0 +1,37 @@
+<div class="listing">
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Row</th>
+      <th>Assignment ID</th>
+      <th>Date Assigned</th>
+      <th>Date Due</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Student ID</th>
+      <th>Status</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @studentassignments.each do |assignment| %>
+      <tr>
+        <td><%= assignment.id %></td>
+        <td><%= assignment.assignment.id%></td>
+        <td><%= assignment.assignment.date_assigned%></td>
+        <td><%= assignment.assignment.date_due%></td>
+        <td><%= assignment.assignment.title%></td>
+        <td><%= assignment.assignment.description%></td>
+        <td><%= assignment.student.id %></td>
+        <td><%= assignment.status %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>

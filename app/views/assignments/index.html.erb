@@ -1,30 +1,51 @@
-<h1>Assignments</h1>
+<div class="listing">
+  <h1>Assignments</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date Assigned</th>
-      <th>Date Due</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th>Completed Work URL</th>
-      <th>Assignment Comments</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
 
-  <tbody>
-    <tr>
-      <td>06/15/2014</td>
-      <td>06/16/2014</td>
-      <td>Fuck You</td>
-      <td>Who Cares</td>
-      <td>Stupid</td>
-      <td>www.why.com</td>
-      <td>Piece of Shit</td>
-      <td>Button 1</td>
-      <td>Button 2</td>
-    </tr>    
-  </tbody>
-</table>
+        <th>Row</th>
+        <th>Date Assigned</th>
+        <th>Date Due</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @assignments.each do |assignment| %>
+        <tr>
+          <td><%= assignment.id %></td>
+          <td><%= assignment.date_assigned %></td>
+          <td><%= assignment.date_due %></td>
+          <td><%= assignment.title %></td>
+          <td><%= assignment.description %></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+
+      <!-- <tr>
+        <td>06/15/2014</td>
+        <td>06/16/2014</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>Whatevs</td>
+        <td>www.why.com</td>
+        <td>Hmmm</td> -->
+      <!-- </tr>
+
+      <tr class="alt">
+        <td>06/19/2014</td>
+        <td>06/20/2014</td>
+        <td>Spinach</td>
+        <td>Eggplant</td>
+        <td>Cooking</td>
+        <td>www.veg.com</td>
+        <td>Yum</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>

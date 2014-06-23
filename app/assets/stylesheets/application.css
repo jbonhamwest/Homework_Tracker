@@ -40,7 +40,7 @@ body{
 .Main_Header {
 	background-color: rgb(113, 189, 191);
 	padding: 0 20px;
-	height:60px;
+	height:90px;
 	border-radius: 18px;
 	box-shadow: 5px 5px 5px #824232;
 
@@ -48,22 +48,46 @@ body{
 
 .Main_Header h1 {
 	float:left;
-	margin-top:8px;
+	width: 415px;
+	margin-top: 8px;
+	padding: 20px;
 	color: #824232;
 	height:43px;
 	/*width:215px;*/
 	/*text-indent:-9999px;*/
 }
 
+.Main_Header img {
+	float:left;
+	margin-top: 12px;
+	padding-right: 10px;
+}
+
+.Main_Header h2 {
+	margin-top: 0px;
+	padding-right: 2px;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: right;
+	display: inline
+}
+
 .nav {
 	list-style-type: none;
 	float: right;
+	margin-top: 35px;
+	display: block;
 	color:#824232;
 
 }
 .nav li {
+	font-size: 18px;
 	display: inline;
 	margin-right:5px;
+
+}
+
+.nav h2 {
 
 }
 .nav_links {
@@ -73,11 +97,13 @@ body{
 
 .notice, .valid_notice, .invalid_notice {
 	height:35px;
-	width: 400px;
+	width: 500px;
 	margin:auto;
 	margin-top:20px;
+	margin-bottom: 10px;
 }
-.notice, .invalid_notice p, .valid_notice p {
+.notice p, .invalid_notice p, .valid_notice p {
+	font-size: 16px;
 	text-align:center;
 	margin-top:6px;
 }
@@ -102,4 +128,33 @@ body{
 	margin:auto;
 	width:220px;
 	text-align:center;
+}
+
+.listing {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		width: 100%;
+}
+
+.listing table {
+		border-collapse: collapse;
+}
+
+.listing td, .listing th {
+		font-size: 1em;
+		border: 1px solid #824232;
+		padding: 3px 7px 2px 7px;
+}
+
+.listing th {
+		font-size: 1.1em;
+		text-align: left;
+		padding-top: 5px;
+		padding-bottom: 4px;
+		background-color: rgb(113, 189, 191);
+		color: #824232;
+}
+
+.listing tr.alt td {
+		color: #824232;
+		background-color: rgb(180, 228, 221);
 }

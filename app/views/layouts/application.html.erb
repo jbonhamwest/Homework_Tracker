@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Marshall Middle School's HomeworkTracker</title>
+  <title>Walsh Middle School HomeworkTracker</title>
   <link href='http://fonts.googleapis.com/css?family=Muli:400,300italic,400italic,300' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
 
 <div class="Main_Header">
+  <!-- <% image_tag "WalshLogoWords.jpeg" %> -->
+  <img src="/assets/WalshLogoWords.jpeg" />
   <h1>Homework Tracker</h1>
     <%unless session[:user_id]%>
       <ul class="nav">
@@ -19,11 +20,13 @@
       </ul>
     <%else%>
       <ul class="nav">
+        <h2><%= session[:email] %> (<%= session[:user_id] %>)</h2>
         <li><%= link_to :Home , :home, class: "nav_links" %> |</li>
         <li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
         <li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
         <li><%= link_to :Logout , :logout, class: "nav_links" %></li>
       </ul>
+
   <%end%>
 </div>
   <% if flash[:color]== "valid" %>

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'studentassignments/index'
+
+  get 'studentassignments/new'
+
+  get 'studentassignments/show'
+
+  get 'studentassignments/edit'
+
+  get 'studentassignments/destory'
+
   get 'users/new'
 
   get 'welcome/index'
@@ -8,6 +18,8 @@ Rails.application.routes.draw do
   resources :teachers
 
   resources :assignments
+
+  resources :studentassignments
 
   # The priority is based upon order of creation: first created -> highest
   # priority.

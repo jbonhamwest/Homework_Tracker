@@ -15,6 +15,14 @@
         account and can check for new assignments, see what your instructor thought
         about assignments that have been graded, and make sure you don't have any
         assignments that are past due.</p>
+      <p>If you are stuck please remember to ask for help. All your teachers are
+        available via e-mail but you may need to go and speak to them to ask for
+        a further explanation. Please do this well in advance of the due date so
+        you leave yourself enough time to complete the work.</p>
+
+      <p>If you have any problems with the site, please email
+         <a href="mailto:support@homeworktracker.walsh.net">support@homeworktracker.walsh.net</a>
+      </p>
 </div>
 
 <div class="Sign_Form">
@@ -23,7 +31,7 @@
       <!-- <p> Username:</br> <%= f.text_field :username%> </p> -->
       <p> Email:</br> <%= f.text_field :email%> </p>
       <p> Password:</br> <%= f.password_field :password%></p>
-      <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+      <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
       <%= f.submit :Signup %>
     <% end %>
     <% if @user.errors.any? %>
