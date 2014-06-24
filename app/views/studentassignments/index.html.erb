@@ -18,7 +18,7 @@
 
   <tbody>
     <% @studentassignments.each do |assignment| %>
-      <tr>
+      <tr <%= overdue assignment.assignment.date_due, assignment.status %> >
         <td><%= assignment.id %></td>
         <td><%= assignment.assignment.id%></td>
         <td><%= assignment.assignment.date_assigned%></td>

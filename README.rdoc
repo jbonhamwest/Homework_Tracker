@@ -27,8 +27,6 @@ TBD
 
 * To Do
  **Alternating listing row style generation
- **List sorting based on date due
- **Past due assignment list highlighting
  **Homework submission workflow and button creation on student assignments view
  **Comment field buttons on student assignment view
  **Comment field creation for teacher

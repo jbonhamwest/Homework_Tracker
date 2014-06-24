@@ -4,6 +4,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
+    flash[:color] = 'none'
     @assignments = Assignment.none
     if session[:teacher_id]
       @assignments = Assignment.where(teacher_id: session[:teacher_id])
@@ -59,7 +60,7 @@ class AssignmentsController < ApplicationController
   def delete
     @assignment.delete
     respond_to do |format|
-      format.html { redirect_to assignments_url, notice: 'Assignment was successfully deleted.' }
+      format.html { redirect_to assignments_url, notice: 'Assignment deleted.' }
       format.json { head :no_content }
     end
   end
@@ -71,8 +72,10 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list
+  # through.
   def assignment_params
-    params.require(:assignment).permit(:title, :description, :assigned, :assigned_due)
+    params.require(:assignment).permit(:title, :description, :assigned,
+                                       :assigned_due)
   end
 end

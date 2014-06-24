@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20140622030331) do
   end
 
   create_table "studentassignments", force: true do |t|
-    t.integer "assignment_id"
-    t.integer "student_id"
-    t.string  "status"
+    t.integer  "assignment_id"
+    t.integer  "student_id"
+    t.string   "status"
   end
 
   create_table "students", force: true do |t|

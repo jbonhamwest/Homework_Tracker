@@ -1,0 +1,96 @@
+Interesting note on migrations/rollbacks during development:
+because we made a seeds.rb file in the development phase, we don't have to do
+any rollbacks; we just reset the database schema and content, and it reverts to
+the original state after deleting everything. Then it recreates it and fills it
+with all the hard-coded test data in the seeds.rb file and pulls the structure
+from the schema.rb file.
+
+******************************************
+
+tricky thing about my app is I have both an
+
+assignments view/controller/model AND a
+
+studentassignment view/controller/model
+
+Why?
+
+Based on the user id, and the user role (student or teacher or other--admin)
+the URL '/' redirects to '/home'  and THEN
+redirects to '/assignments' for teachers and
+'/studentassignments' for students.
+
+Since we know the student id based upon the user, we can limit the student
+assignments to just that student.
+
+Can see that code in sessions controller.rb  He's the one that does the /home
+business.
+
+*******************************************
+
+Now look at assignments.controller.rb, where we create many action methods
+(index, show, new, create, update, delete--all the CRUD actions).
+
+In this code
+def index
+  @assignments = Assignment.none
+  if session[:teacher_id]
+    @assignments = Assignment.where(teacher_id: session[:teacher_id])
+  end
+end
+
+def index is a method--an action method on the controller. It uses the model to
+populate the view with any necessary data.  In this code, you'll note that
+the instance variable assignments uses a "where clause" on the Assignment class
+to search the database table for rows matching the logged-in teacher id.
+
+LOG into application as teacher1@email to demonstrate the above described action
+method.
+
+Contrast by showing teacher2@email.com   (She has no assignments and doesn't see the assignments
+from teacher1@email.)
+
+********************************************
+
+If you log in as a student you get a different view than the one the teachers got--because
+you are a student (show this by loggin in as student3@email).
+
+In studentassignmentscontroller, the code looks very similar to assignments.controller
+but refers to the student rather than the teacher. If you go to studentassignments.rb
+model, we leverage the "belongs to" relationship to the assignments table to get
+the assignment details. (go visit the index.html.erb in views/studentassignments)
+
+THIS CODE
+<tbody>
+  <% @studentassignments.each do |assignment| %>
+    <tr>
+      <td><%= assignment.id %></td>
+      <td><%= assignment.assignment.id%></td>
+      <td><%= assignment.assignment.date_assigned%></td>
+      <td><%= assignment.assignment.date_due%></td>
+      <td><%= assignment.assignment.title%></td>
+      <td><%= assignment.assignment.description%></td>
+      <td><%= assignment.student.id %></td>
+      <td><%= assignment.status %></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
+</tbody>
+
+
+these accessor methods are getting the data from the returned records from the
+"where clause" in the studentassignmentscontroller.
+
+The interesting one is the assignment.assignment.title (and others) that uses
+the "belongs to" to know how to select the appropriate row from the assignment
+table based on the assignment_id column in the studentassignments table.
+
+(can show schema.rb here)
+Notice that the code for the studentassignments table doesn't include all the
+data displayed for the assignment in the view. That additional information is
+being pulled from the assignments table based on the assignment id (demonstrates
+the influence of the "belongs to").
+
+
+***********************************

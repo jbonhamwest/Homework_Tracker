@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 	before_filter :save_login_state, only: [:index, :login, :login_attempt]
 
 	def home
+		flash[:color] = 'none'
 		if session[:student_id]
 			redirect_to controller: 'studentassignments', action: 'index'
 		elsif session[:teacher_id]
@@ -62,6 +63,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
 		session[:teacher_id] = nil
 		session[:student_id] = nil
+		flash[:color] = 'none'
 		redirect_to action: 'login'
 	end
 end

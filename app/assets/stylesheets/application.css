@@ -113,7 +113,7 @@ body{
 }
 
 .invalid_notice {
-	background-color: #FFCCCC;
+	background-color: #fda055;
 	border:1px solid red;
 }
 .valid_notice {
@@ -122,7 +122,6 @@ body{
 }
 
 .User_Header {
-
 	background-color: rgba(0, 0, 0, .2);
 	border-radius: 18px;
 	margin:auto;
@@ -157,4 +156,8 @@ body{
 .listing tr.alt td {
 		color: #824232;
 		background-color: rgb(180, 228, 221);
+}
+
+.overdue {
+		background-color: #fda055;
 }
