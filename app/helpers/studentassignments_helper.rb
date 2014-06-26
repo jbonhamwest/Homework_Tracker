@@ -7,6 +7,6 @@ module StudentassignmentsHelper
 
   def markup(text)
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
-    markdown.render(text)
+    markdown.render(text).html_safe
   end
 end

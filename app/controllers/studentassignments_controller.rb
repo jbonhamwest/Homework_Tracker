@@ -25,6 +25,7 @@ class StudentassignmentsController < ApplicationController
   end
 
   def edit
+    # @list.tasks.build
   end
 
   def delete

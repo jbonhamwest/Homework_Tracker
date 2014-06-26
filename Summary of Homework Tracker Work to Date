@@ -1,0 +1,77 @@
+SUMMARY of WORK TD - Homework Tracker
+
+6/25/2014
+
+GENERIC
+Fixed studentassignments model misnaming; changed to studentassignment in
+studentassignment.rb file name, updated studentassignment controller model class
+name
+
+Remaining studentsassignments is the studentassignment controller
+
+MODEL WORK
+Created comment model for adding teacher comments to studentassignment model. The
+comment is a has_many association to the student assignment. The foreign key is
+the studentassignment_id. The primary key is id in the comment model. The foreign key
+is a key in a table that refers to a primary key of another table. In this case,
+table and model are synonymous.
+
+Added a work column to the studentassignment model for students to submit work.
+
+
+VIEW WORK
+studentassignments index view
+  Modified index.html.erb by restructuring the table layout to add comment field
+  and a submit assignments button
+
+  Submit assignments button redirects via a link to the studentassignments edit.html.erb
+  Button is only present if a homework assignment still needs submitting.
+
+Developed studentassignments_form.html.erb for
+  This introduced the use of the fields_for method(but the method is part of the
+  simple form form builder gem) to access nested attributes of the
+  studentassignment model, specifically the assignment information from the assignment
+  table. (An example is assignment.assignment.title) Found that nested fields are
+  difficult in simple forms. Couldn't get the read-only text-area fields with Markdown
+  to work using simple form gem tools. Hard coded the text area for the assignment
+  description run through Markdown by looking at the HTML the text area generated
+  by putting in the text without any call to my markup method. Then inspected the
+  generated HTML in the browser and then copied that HTML from the browser into
+  the _form.HTML.erb code, which replaced the ff.text_area's contents.
+
+  Added a markup view helper to studentassignments_helper.rb to encapsulate the
+  use of Redcarpet Markdown renderer. I still have preceding paragraph tags that
+  I don't think I coded but still show up in the table. Tried both Kramdown and
+  Redcarpet with same result, which leads me to believe I have erred but have
+  not found the error yet. No response to HipChat query; wonder if others have
+  experienced the same issue? Clinton?
+
+CONTROLLER WORK
+studentassignments_controller.rb
+  Put in private methods (methods that can't be called from outside the
+  studentassignments controller class) for
+      set_studentassignment
+      studentassignment_params
+  These private methods are used to hook the edit action view into the controller.
+    set_studentassignment goes in and looks through the studentassignments data table
+    and finds and selects the entry that matches the id from the parameters id (params[:id]) passed through the para-
+    meterized URL in
+
+    line 47
+          @studentassginment = Studentassignment.find(params[:id])
+    params is a hash that gets created by the thing that calls studentassignments.controller
+      and is all the parameters that are on the URL, example: /studentassignments/edit/1
+
+      When you (rake routes) routes.rb file line resources: studentassignments, you get a
+      bunch of default routes URL matching patterns in application controller
+
+      the 1 is associated with :id in the parameters list in the route associated
+      with studentassignments.edit (routes.rb => resources :studentassignments)
+
+      when you run it and look at the
+
+
+      *****look at line 28 in studentsassignments_controller; I added code from the lecture
+      *****model has to have
+      accepts_nexted_atrributes_for :___________ in the list.rb
+      *****also look at nested code in studentassignments_form.html

@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= fields_for :assignment, @studentassignment.assignment do |ff| %>
+  <%= f.fields_for :assignment, @studentassignment.assignment do |ff| %>
 
     <div class="field">
       <%= ff.label :date_assigned %>
