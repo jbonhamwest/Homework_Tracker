@@ -11,10 +11,7 @@ The database engine is SQLite.
 admin@localhost is the initial user.
 
 * Database creation
-The database is being seeded with test data. Test data will be removed upon
-app completion.
-
-* Database initialization
+The database is being seeded with test data.
 
 * How to run the test suite
 Currently there is no test suite
@@ -26,20 +23,18 @@ None
 TBD
 
 * To Do
- **Alternating listing row style generation
- **Homework submission workflow and button creation on student assignments view
- **Comment field buttons on student assignment view
- **Comment field creation for teacher
- **Assignment creation workflow and button creation on teacher assignments view
- **Additional styling
- **Administrator workflows/views for assigning roles to users, default user
-   should be student
- **Assignment description field rendered using Markdown to HTML
- **Assignment comment fields rendered using Markdown to HTML
- **Homework submission field rendered using Markdown to HTML if not URL
+ ** Alternating listing row style generation
+  *** Remaining work: generate class tags in the studentassignments/index.html.erb
 
+ ** Comment field buttons on student assignment view
+  *** Added comment MVC. Remaining work: forms and styling to connect it to
+      studentassignment MVC
 
+ ** Assignment creation workflow and button creation on teacher assignments view
 
+ ** Additional styling
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+ ** Administrator workflows/views for assigning roles to users, default user
+   should be student. Workflow is currently hard-coded via seeds.rb
+
+ ** Homework submission field rendered using Markdown to HTML
