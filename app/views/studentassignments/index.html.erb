@@ -1,34 +1,32 @@
 <div class="listing">
-<h1>Students</h1>
+<h1>Student Assignments</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Row</th>
-      <th>Assignment ID</th>
+      <th>Assign-<wbr>ment</th>
       <th>Date Assigned</th>
       <th>Date Due</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Student ID</th>
       <th>Status</th>
-      <th colspan="2"></th>
+      <th>Comments</th>
+      <th>Submit</th>
     </tr>
   </thead>
 
   <tbody>
     <% @studentassignments.each do |assignment| %>
       <tr <%= overdue assignment.assignment.date_due, assignment.status %> >
-        <td><%= assignment.id %></td>
         <td><%= assignment.assignment.id%></td>
         <td><%= assignment.assignment.date_assigned%></td>
         <td><%= assignment.assignment.date_due%></td>
         <td><%= assignment.assignment.title%></td>
-        <td><%= assignment.assignment.description%></td>
-        <td><%= assignment.student.id %></td>
+        <td><%= markup(assignment.assignment.description) %></td>
         <td><%= assignment.status %></td>
-        <td></td>
-        <td></td>
+        <td><%= markup(assignment.comments[0].comment) if assignment.comments[0] %></td>
+        <td><%= link_to('Submit', controller: "studentassignments", action: "edit",
+                                  id: assignment.id) unless (assignment.status.eql? "completed")%></td>
       </tr>
     <% end %>
   </tbody>

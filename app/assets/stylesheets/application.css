@@ -161,3 +161,11 @@ body{
 .overdue {
 		background-color: #fda055;
 }
+
+.field input[type="text"] {
+		font-size: 1.1em;
+		width: 400px;
+		height: 20px;
+		display: block;
+		margin-bottom: 20px;
+}

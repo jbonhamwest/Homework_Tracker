@@ -51,14 +51,25 @@ Student.create(id: 1, user_id: 3, teacher_id: 1)
 
 Student.create(id: 2, user_id: 4, teacher_id: 1)
 
-Studentassignments.create(id: 1, assignment_id: 1, student_id: 1,
+Studentassignment.create(id: 1, assignment_id: 1, student_id: 1,
                           status: 'completed')
 
-Studentassignments.create(id: 2, assignment_id: 2, student_id: 1,
+Studentassignment.create(id: 2, assignment_id: 2, student_id: 1,
                           status: 'assigned')
 
-Studentassignments.create(id: 3, assignment_id: 1, student_id: 2,
+Studentassignment.create(id: 3, assignment_id: 1, student_id: 2,
                           status: 'assigned')
 
-Studentassignments.create(id: 4, assignment_id: 3, student_id: 1,
+Studentassignment.create(id: 4, assignment_id: 3, student_id: 1,
                           status: 'assigned')
+
+Comment.create(id: 1, studentassignment_id: 1, teacher_id: 1,
+               comment: "Your work is starting to sound more and more like
+               Hemingway's--short, pithy use of descriptive, active language.
+               Well done! Try paying a little more attention to parallelism so
+               the train of thought is easier for your reader to follow.")
+
+Comment.create(id: 2, studentassignment_id: 2, teacher_id: 2,
+               comment: "This was received after the due date. Please
+               follow the course procedures listed in the syllabus to get
+               this assignment evaluated.")

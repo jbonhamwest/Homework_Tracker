@@ -1,0 +1,43 @@
+<%= form_for(@studentassignment) do |f| %>
+  <% if @studentassignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@studentassignment.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+      <% @studentassignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= fields_for :assignment, @studentassignment.assignment do |ff| %>
+
+    <div class="field">
+      <%= ff.label :date_assigned %>
+      <%= ff.text_field :date_assigned, readonly: true%>
+    </div>
+    <div class="field">
+      <%= ff.label :date_due %>
+      <%= ff.text_field :date_due, readonly: true %>
+    </div>
+    <div class="field">
+      <%= ff.label :title %><br>
+      <%= ff.text_field :title, readonly: true %>
+    </div>
+    <div class="field">
+      <%= ff.label :description %><br>
+      <textarea id="assignment_description" readonly="readonly" name="assignment[description]" cols="60">
+        <%= markup(@studentassignment.assignment.description) %>
+      </textarea>
+    </div>
+  <% end %>
+
+  <div class="text_area">
+    <%= f.label :work %><br>
+    <%= f.text_area :work, cols: 60, rows: 15 %></div>
+
+  <div class="actions">
+    <%= f.submit "Click here to submit assignment"%>
+  </div>
+<% end %>

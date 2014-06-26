@@ -1,9 +1,82 @@
+OPEN the database and its 6 tables
+
+I too am figuring out the best way to approach a multi-level development project, and
+for this project I tried three different ways.
+
+First I brainstormed some ideas with Erin (thank you, Erin). Then I sat by David and
+asked him some questions that helped me understand I needed to give some thought
+to my models (thank you, David). Then I went and sat by Sebastian and Michael and
+watched them work on their model attributes in the early part of their designs.
+They aslo shared their modeling notes with me and answered my questions. Through
+all that intelligence gathering, I discovered some foundational knowledge areas
+that I wanted to shore up so I'd be better prepared to tackle this project.
+
+So I went home and did lots of reading (thank you for your suggestions, Clinton)
+and Q&A with Ricky (thank you Ricky, for your infinite patience and deep knowledge)
+to solidify my understanding of the scaffolding that Rails generates
+and how the files relate to one another. I also did additional work to illuminate
+more fully roles of the MVC architecture model, and how that model differs
+slightly in Rails. After that prework, I felt ready to tackle the assignment.
+
+During the subsequent Q & A session, Ricky and I talked through the models, their
+attributes, the model components, and their relationships. He helped me develop this
+
+
+SHOW the Physical Model Data Modeling Diagram that shows all of that visually.
+
+As you just heard, I'm still choosing how I best can know how to start and how
+to keep all the raw concepts straight. It's a lot like writing or learning to perform
+a new musical composition, in which you approach components first and then weave
+them into a whole, subtracting and adding material and/or process along the way as revealed by
+your deepening understanding. In my brain, small pieces of it are linear but others
+are quite synergistic, and my increasing experience will continue to reveal to me
+new choices, as well as help me develop some ingrained "helper" habits.
+
+Doing deep prep is a very different way for me to work compared to the skills I
+used to get through the rest of my education when I relied about 90% on ability,
+5% on intuition, and 5% on luck. That worked very well for me all of the time, but it
+ also meant I could "fly by the seat of my pants" and still be successful as
+ measured by external metrics. What it DIDN'T do is add preparation and effort
+ to reach MY top capability.
+
+Then I worked in a business where preparation made the difference between well-done
+and outstanding and I chose to be less impulsive and try to develop some consistency.
+I found that when I fully prepared,  my outcomes soared as did the experience of
+the people I was leading. I was more at peace with the outcomes, which were more
+predicatable and uniformly high quality.
+
+So that's how I am approaching this learning opportunity. It takes longer.
+I don't care. I'm worth it, and the people who hire me deserve my fullest capability
+AND capacity.
+
+____________________________
+
+
+So, I went ahead and learned how to use SQLlite for this project bc we needed a database
+and a YML file works ok for configuration of databases but we needed something
+that would work efficiently with dynamic website data. SQLite can store more data.
+
+OPEN seeds.rb
+
+I seeded the data in my seeds.rb file so I could see the index views and so we'd
+have data to test. The database, the seed.rb file, and the schema in the schema.rb
+file are all structurally linked.
+
+The attribute definitions in schema.rb such as t_text "description" are represented
+in SQL data structure as columns. Data was seeded in using seeds.rb. Used the models
+in seeds.rb to populate the database. Each model class corresponds to a single
+table in the datbase.
+
+
+
+
 Interesting note on migrations/rollbacks during development:
 because we made a seeds.rb file in the development phase, we don't have to do
 any rollbacks; we just reset the database schema and content, and it reverts to
 the original state after deleting everything. Then it recreates it and fills it
 with all the hard-coded test data in the seeds.rb file and pulls the structure
 from the schema.rb file.
+
 
 ******************************************
 
